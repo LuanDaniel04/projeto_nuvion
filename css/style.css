@@ -1,20 +1,50 @@
+:root {
+    --primary: #A7C7E7;
+    --secondary: #C8F3E0;
+    --background: black;
+    --texto: #FFFFFF;
+}
+
 body {
 background-image: url("../assets/teste3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
-navbar {
-    color: white;
+#section1 .navbar {
+    background-color: transparent;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
 }
+
 #section1 {
+    height: 55vh;
+    width: 100%;
+    background-image: url("../assets/teste3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#section2 {
     height: 100vh;
     width: 100%;
     background-image: url("../assets/teste3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 .espaco {
     display: inline;
     justify-content: space-around;
+}
+
+.espaco .btn {
+    border: 0;
+}
+
+.espaco .btn:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    
+    color: var(--texto);
+    
 }

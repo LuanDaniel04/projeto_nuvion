@@ -12,20 +12,20 @@ body {
 }
 
 #Velaris {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: -1;
-            display: block;
-        }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    display: block;
+}
 
 /* =============================== Seção 1 =============================== */
 #section1 {
     height: 35vh;
     width: 100%;
-    padding-top: 80px; /* ajuste para a altura da navbar */
+    padding-top: 80px;
 }
 
 .navbar {
@@ -36,40 +36,82 @@ body {
     z-index: 10;
 }
 
-.espaco {
-    display: inline;
-    justify-content: space-around;
-}
-
 .espaco .btn {
     border: 0;
 }
 
 .espaco .btn:hover {
     background-color: rgba(160, 138, 138, 0.4);
-
     color: var(--primary);
-
 }
 
-/* =============================== Seção 2 =============================== */
+/* =============================== Seções =============================== */
 
 #section2 {
     height: 65vh;
     width: 100%;
 }
 
-
-/* =============================== Seção 3 =============================== */
-
 #section3 {
     height: 100vh;
     width: 100%;
 }
 
-/* =============================== Seção 4 =============================== */
-
 #section4 {
     height: 100vh;
     width: 100%;
+}
+
+
+/* =============================== FORM =============================== */
+
+.fundo-form {
+    background-color: rgb(254, 252, 252, 0.1);
+    width: 70vw;
+    padding: 3rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+}
+
+.form-label {
+    color: black;
+}
+
+#title-form {
+    color: white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.fundo-form form {
+    width: 100%;
+    max-width: 30vw;
+}
+
+.fundo-form .mb-3 {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Inputs */
+.fundo-form input {
+    width: 100%;
+}
+
+/* Botão */
+.form-button {
+    width: 100%;
+    margin-top: 2rem;
+    background-color: var(--primary);
+    border-radius: 1.5rem;
+    padding: 0.6rem 1rem;
+    border: none;
+}
+.form-button:hover {
+    background-color: var(--secondary);
 }

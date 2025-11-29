@@ -4,11 +4,32 @@
     --background: black;
     --texto: #FFFFFF;
 }
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     overflow-x: hidden;
     background-color: var(--background);
+}
+
+div.cursor {
+    width: 50px;
+    height: 50px;
+    border: 2px dashed gold;
+    border-radius: 100%;
+    position: absolute;
+    animation: cursor 5s linear infinite;
+}
+@keyframes cursor {
+    to {
+        transform: rotate(0deg);
+    } from {
+        transform: rotate(-360deg);
+    }
 }
 
 #Velaris {
@@ -31,7 +52,7 @@ body {
 .navbar {
     background-color: transparent;
     padding: 20px;
-    position: sticky;
+    position: fixed;
     width: 100%;
     z-index: 10;
 }

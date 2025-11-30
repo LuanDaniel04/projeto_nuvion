@@ -1,4 +1,4 @@
-/** @type {HTMLCanvasElement} */
+/** @type {HTMLCanvasElement} */ 
 const quadro = document.getElementById("Velaris");
 const pincel = quadro.getContext("2d");
 

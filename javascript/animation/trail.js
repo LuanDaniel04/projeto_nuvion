@@ -2,7 +2,7 @@ const cursor = document.querySelector(".cursor");
 let timeout;
 
 window.addEventListener("mousemove", (e) => {
-    cursor.style.top = e.pageY + "px";
+    cursor.style.top = e.pageY + "px"; 
     cursor.style.left = e.pageX + "px";
     cursor.classList.remove("hide");
 
@@ -12,10 +12,10 @@ window.addEventListener("mousemove", (e) => {
     trail.style.left = e.pageX + "px";
     document.body.appendChild(trail);
 
-    setTimeout(() => trail.remove(), 600);
+    setTimeout(() => trail.remove(), 600); //Deleta o rastro do mouse a cada 600ms
 
     clearTimeout(timeout);
     timeout = setTimeout(() => {
         cursor.classList.add("hide");
-    }, 300); 
+    }, 300);  //Esconde o efeito do mouse a cada 300ms parado
 });

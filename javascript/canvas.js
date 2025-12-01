@@ -50,7 +50,7 @@ function gerarEstrelas(qtd) {
 }
 
 // Gera as estrelas inicialmente
-gerarEstrelas(800);
+gerarEstrelas(1200); //Adicionar uma constant com numeros aleatorios entre 1200 e 1500 para gerar as estrelas
 
 
 // Função para desenhar as estrelas

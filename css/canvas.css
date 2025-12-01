@@ -123,6 +123,10 @@ body {
     color: black;
 }
 
+.form-label:hover {
+    color: var(--secondary);
+}
+
 #title-form {
     color: white;
     text-align: center;

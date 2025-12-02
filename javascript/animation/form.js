@@ -7,6 +7,6 @@ const observer = new IntersectionObserver((entries) => {
             observer.unobserve(form);
         }
     });
-}, { threshold: 0.3 }); //Visivel qnd chegar em 30%
+}, { threshold: 0.5 }); //Visivel qnd chegar em 50%
 
 observer.observe(form);

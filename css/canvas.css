@@ -9,12 +9,21 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
     margin: 0;
     overflow-x: hidden;
     background-color: var(--background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Lato', sans-serif;
 }
 
 .cursor {
@@ -32,6 +41,7 @@ body {
 .cursor.hide {
     opacity: 0;
 }
+
 .trail {
     position: absolute;
     width: 12px;
@@ -63,9 +73,11 @@ body {
 
 /* =============================== Seção 1 =============================== */
 #section1 {
-    height: 35vh;
+    min-height: 35vh;
+    height: auto;
     width: 100%;
-    padding-top: 80px;
+    padding-top: 120px;
+    padding-bottom: 40px;
     color: var(--texto);
     text-align: center;
 }
@@ -93,6 +105,15 @@ body {
     z-index: 10;
 }
 
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-collapse.show .btn:hover {
+    background-color: var(--secondary);
+    color: black;
+}
+
 .espaco .btn {
     border: 0;
 }
@@ -105,13 +126,13 @@ body {
 /* =============================== Seções 2 =============================== */
 
 .servicos {
-    height: 65vh;
+    min-height: 65vh;
     width: 100%;
     display: flex;
-    justify-content: center;      
-    align-items: stretch;     
-    gap: 40px;                  
-    flex-wrap: wrap;             
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    flex-wrap: wrap;
     padding: 40px 0;
 }
 
@@ -122,7 +143,7 @@ body {
     border-radius: 12px;
     padding: 20px;
     text-align: left;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     display: flex;
     flex-direction: column;
@@ -152,7 +173,7 @@ body {
     cursor: pointer;
 }
 
-.btn-sm:hover{
+.btn-sm:hover {
     background-color: var(--secondary);
 }
 
@@ -173,7 +194,7 @@ body {
 .fundo-form {
     background-color: rgb(254, 252, 252, 0.05);
     backdrop-filter: blur(2px);
-    width: 70vw;
+    width: min(70vw, 900px);
     padding: 3rem;
     border-radius: 2rem;
     display: flex;
@@ -200,7 +221,8 @@ body {
 
 .fundo-form form {
     width: 100%;
-    max-width: 30vw;
+    min-width: 0;
+    max-width: 600px;
 }
 
 .fundo-form .mb-3 {
@@ -262,7 +284,7 @@ body {
 /* =============================== Seção 4 =============================== */
 
 #section4 {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
 }
 
@@ -310,4 +332,152 @@ footer small {
 
 .social-links a:hover {
     color: var(--secondary);
+}
+
+/* =============================== Responsividade =============================== */
+
+/* Mobile */
+
+@media (max-width: 430px) {
+    .fundo-form {
+        padding: 1.5rem;
+        width: min(90vw, 500px);
+    }
+
+    #title-form {
+        font-size: 1.3rem;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px 15px;
+        backdrop-filter: blur(6px);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .espaco .btn {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    #section1 {
+        padding-top: 120px;
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    #section1 h1 {
+        font-size: 1.8rem;
+    }
+
+    #section1 p {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    #btnContato {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    .fundo-form {
+        width: 90vw;
+        padding: 2rem;
+    }
+
+    #section4 {
+        height: auto;
+        padding: 60px 0;
+    }
+
+    footer {
+        padding: 1.5rem 0;
+        font-size: 0.85rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-links a {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Tablets e notebooks */
+@media (min-width: 601px) and (max-width: 1400px) {
+    .fundo-form {
+        width: 70vw;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 900px) {
+    .servicos {
+        gap: 20px;
+        padding: 20px 0;
+        min-height: auto;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 320px;
+
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 991px) {
+
+
+    .navbar .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .navbar .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #navbarButtons {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(6px);
+        padding: 15px 0;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    #navbarButtons .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        align-items: center;
+    }
+
+    #navbarButtons .btn-group .btn {
+        width: 90%;
+        text-align: center;
+    }
+}
+
+
+/* TVs e telas gigantes (4K, ultrawide) */
+@media (min-width: 1401px) {
+    .fundo-form {
+        width: 60vw;
+        max-width: 900px;
+    }
 }

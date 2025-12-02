@@ -1,4 +1,4 @@
-/** @type {HTMLCanvasElement} */ 
+/** @type {HTMLCanvasElement} */
 const quadro = document.getElementById("Velaris");
 const pincel = quadro.getContext("2d");
 
@@ -10,6 +10,8 @@ function tamanhoCanvas() {
 
 window.addEventListener("resize", () => {
     tamanhoCanvas();
+    numeroEstrelas = calcularEstrelas();
+    gerarEstrelas(numeroEstrelas);
     desenhaEspaco();
 });
 
@@ -49,8 +51,25 @@ function gerarEstrelas(qtd) {
     }
 }
 
-// Gera um numero aleatorio de estrelas entre 800 e 1200 
-const numeroEstrelas = Math.random() * 400 + 800;
+
+//função que pega a largura da tela e calcula o valor de estrelas que vai ser gerado
+function calcularEstrelas() {
+    const largura = window.innerWidth;
+
+    if (largura <= 600) { //Mobile
+        return Math.floor(Math.random() * 200 + 700);
+    } else if (largura <= 1400) { //Tablets grandes e notebooks
+        return Math.floor(Math.random() * 300 + 700);
+    } else if (largura <= 2200) { //Telas maiores de computador
+        return Math.floor(Math.random() * 400 + 800);
+    } else { //TV
+        return Math.floor(Math.random() * 2000 + 3000);
+    }
+}
+
+let numeroEstrelas = calcularEstrelas();
+
+console.log(numeroEstrelas)
 
 // Gera as estrelas inicialmente
 gerarEstrelas(numeroEstrelas);
@@ -73,7 +92,7 @@ function desenharEstrelas() {
 function animar() {
     desenhaEspaco();
     desenharEstrelas();
-    
+
     requestAnimationFrame(animar);
 }
 

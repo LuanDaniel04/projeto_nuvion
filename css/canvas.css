@@ -106,6 +106,8 @@ body {
 /* =============================== Seções 2 =============================== */
 
 .servicos {
+    height: 65vh;
+    width: 100%;
     display: flex;
     justify-content: center;      
     align-items: stretch;     

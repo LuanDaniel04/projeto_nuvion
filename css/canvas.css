@@ -17,7 +17,6 @@ body {
     background-color: var(--background);
 }
 
-/* Cursor principal */
 .cursor {
     width: 16px;
     height: 16px;
@@ -163,11 +162,11 @@ body {
 #section3 {
     height: 100vh;
     width: 100%;
-    position: relative;
-    background-image: url("../assets/lua.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: center;/* start / end */
-    background-size: 200px, 220px;
+    /* position: relative; */
+    /* background-image: url("../assets/lua.png"); */
+    /* background-repeat: no-repeat, no-repeat; */
+    /* background-position: center; */
+    /* background-size: 200px, 220px; */
 }
 
 
@@ -185,7 +184,7 @@ body {
 }
 
 .form-label {
-    color: black;
+    color: white;
 }
 
 .form-label:hover {
@@ -209,12 +208,10 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Inputs */
 .fundo-form input {
     width: 100%;
 }
 
-/* Botão */
 .form-button {
     width: 100%;
     margin-top: 2rem;

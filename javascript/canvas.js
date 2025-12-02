@@ -49,8 +49,11 @@ function gerarEstrelas(qtd) {
     }
 }
 
+// Gera um numero aleatorio de estrelas entre 800 e 1200 
+const numeroEstrelas = Math.random() * 400 + 800;
+
 // Gera as estrelas inicialmente
-gerarEstrelas(1200); //Adicionar uma constant com numeros aleatorios entre 1200 e 1500 para gerar as estrelas
+gerarEstrelas(numeroEstrelas);
 
 
 // Função para desenhar as estrelas

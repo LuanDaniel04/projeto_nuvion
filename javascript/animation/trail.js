@@ -1,21 +1,53 @@
 const cursor = document.querySelector(".cursor");
 let timeout;
 
+let lastX = null;
+let lastY = null;
+
 window.addEventListener("mousemove", (e) => {
-    cursor.style.top = e.pageY + "px"; 
-    cursor.style.left = e.pageX + "px";
+    const x = e.pageX;
+    const y = e.pageY;
+
+    cursor.style.top = y + "px";
+    cursor.style.left = x + "px";
     cursor.classList.remove("hide");
 
-    const trail = document.createElement("div");
-    trail.classList.add("trail");
-    trail.style.top = e.pageY + "px";
-    trail.style.left = e.pageX + "px";
-    document.body.appendChild(trail);
+    // Primeira vez: sem interpolar
+    if (lastX === null) {
+        createTrail(x, y);
+        lastX = x;
+        lastY = y;
+        return;
+    }
 
-    setTimeout(() => trail.remove(), 600); //Deleta o rastro do mouse a cada 600ms
+    const dx = x - lastX;
+    const dy = y - lastY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    // Quanto menor o step, mais suave o trail
+    const step = 12;
+
+    // Quantas partículas criar para preencher o caminho
+    const steps = Math.max(1, Math.floor(distance / step));
+
+    for (let i = 0; i < steps; i++) {
+        const px = lastX + (dx * i) / steps;
+        const py = lastY + (dy * i) / steps;
+        createTrail(px, py);
+    }
+
+    lastX = x;
+    lastY = y;
 
     clearTimeout(timeout);
-    timeout = setTimeout(() => {
-        cursor.classList.add("hide");
-    }, 300);  //Esconde o efeito do mouse a cada 300ms parado
+    timeout = setTimeout(() => cursor.classList.add("hide"), 200);
 });
+
+function createTrail(x, y) {
+    const t = document.createElement("div");
+    t.classList.add("trail");
+    t.style.left = x + "px";
+    t.style.top = y + "px";
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 300);
+}

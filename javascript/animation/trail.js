@@ -25,7 +25,7 @@ window.addEventListener("mousemove", (e) => {
     const distance = Math.sqrt(dx * dx + dy * dy);
 
     // Quanto menor o step, mais suave o trail
-    const step = 5;
+    const step = 12;
 
     // Quantas partículas criar para preencher o caminho
     const steps = Math.max(1, Math.floor(distance / step));

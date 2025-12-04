@@ -155,3 +155,9 @@
         max-width: 900px;
     }
 }
+
+@media (min-width: 1920px) {
+    #section4 .destaque {
+        font-size: 3.5rem;
+    }
+}

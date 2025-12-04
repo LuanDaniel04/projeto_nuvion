@@ -90,7 +90,6 @@ function desenharEstrelas() {
 function animar() {
     desenhaEspaco();
     desenharEstrelas();
-
     requestAnimationFrame(animar);
 }
 

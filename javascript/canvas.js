@@ -69,8 +69,6 @@ function calcularEstrelas() {
 
 let numeroEstrelas = calcularEstrelas();
 
-console.log(numeroEstrelas)
-
 // Gera as estrelas inicialmente
 gerarEstrelas(numeroEstrelas);
 
